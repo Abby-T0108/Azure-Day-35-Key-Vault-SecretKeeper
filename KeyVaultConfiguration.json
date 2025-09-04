@@ -1,0 +1,35 @@
+﻿{
+  "keyVaultName": "SecureCloudKV-2855",
+  "resourceGroup": "RG-KeyVault-Day35",
+  "location": "East US",
+  "secrets": [
+    {
+      "name": "DatabasePassword",
+      "description": "Production database password",
+      "rotationInterval": "30 days",
+      "lastRotated": "2025-09-04"
+    },
+    {
+      "name": "APIKey", 
+      "description": "Third-party API authentication key",
+      "rotationInterval": "90 days",
+      "lastRotated": "2025-09-04"
+    },
+    {
+      "name": "ConnectionString",
+      "description": "Database connection string with embedded credentials",
+      "rotationInterval": "30 days", 
+      "lastRotated": "2025-09-04"
+    }
+  ],
+  "accessPolicies": [
+    {
+      "principal": "WebApp-Production",
+      "permissions": ["Get"]
+    },
+    {
+      "principal": "BackupService",
+      "permissions": ["Get", "List"]
+    }
+  ]
+}
